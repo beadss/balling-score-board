@@ -1,8 +1,7 @@
-package player;
+package bowling.player;
 
-import frame.Frame;
-import frame.FrameIssuer;
-import frame.ball.Ball;
+import bowling.frame.Frame;
+import bowling.frame.FrameIssuer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +23,8 @@ public class Player {
 		addFrame();
 	}
 
-	public boolean addBall(Ball ball) {
-		if(!currentFrame.addBall(ball)) {
+	public boolean addBall(int pinCount) {
+		if(!currentFrame.addBall(pinCount)) {
 			return addFrame();
 		}
 

@@ -1,4 +1,4 @@
-package frame;
+package bowling.frame;
 
 /**
  * Created by naver on 2018. 11. 26..

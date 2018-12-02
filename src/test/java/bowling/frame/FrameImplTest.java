@@ -1,6 +1,5 @@
-package frame;
+package bowling.frame;
 
-import frame.ball.Ball;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -15,25 +14,25 @@ public class FrameImplTest {
 	public void addBall() {
 		Frame frame = makeFrame();
 
-		assertTrue(frame.addBall(new Ball(1)));
-		assertFalse(frame.addBall(new Ball(1)));
+		assertTrue(frame.addBall(1));
+		assertFalse(frame.addBall(1));
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = IllegalStateException.class)
 	public void addBall_overBallCountSize() {
 		Frame frame = makeFrame();
 
-		assertTrue(frame.addBall(new Ball(1)));
-		assertFalse(frame.addBall(new Ball(1)));
+		assertTrue(frame.addBall(1));
+		assertFalse(frame.addBall(1));
 
-		frame.addBall(new Ball(1));
+		frame.addBall(1);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = IllegalStateException.class)
 	public void addBall_overPinCount() {
 		Frame frame = makeFrame();
-		assertTrue(frame.addBall(new Ball(9)));
-		frame.addBall(new Ball(2));
+		assertTrue(frame.addBall(9));
+		frame.addBall(2);
 	}
 
 	private Frame makeFrame() {
